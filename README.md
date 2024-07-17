@@ -1,30 +1,53 @@
-# React + TypeScript + Vite
+# Dino Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple project made for the Blockchain Fellowship for Rumsan, made by using Vite + TanStack Router. Try it out [here](https://dino-game-ebon.vercel.app/).
 
-Currently, two official plugins are available:
+## Running in your local Machine 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Bun was used for building the project but you can also use npm
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```shell
+  npm i
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+```shell
+  bun install
+```
+
+Then run the development server
+
+```shell
+  npm run dev
+```
+
+```shell
+  bun dev
+```
+
+
+## Project Structure
+
+```
+  public/
+  src/
+    components/
+    context/
+    hooks/
+    layout/
+    lib/
+    routes/
+    sections/
+    utils/
+    main.tsx
+    index.css
+    routeTree.gen.ts(can be ignored)
+
+```
+
+## Project Details
+
+Check out the project in detail [here](/Project%20Proposal%20-%20Fellowship.pdf)
+
+## Project Wireframe
+
+![wireframe](Dino%20UI.png "Wireframe")

@@ -48,6 +48,10 @@ Then run the development server
 
 Check out the project in detail [here](/Project%20Proposal%20-%20Fellowship.pdf)
 
+## Smart Contract Details
+
+Check out the contract in detail [here](/Smart%20Contract%20Details.pdf)
+
 ## Project Wireframe
 
 ![wireframe](Dino%20UI.png "Wireframe")

@@ -8,7 +8,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 
 const NavBar = () => {
     const navigate = useCustomNavigate();
-    const { account, setAccount } = useGlobalContext();
+    const { account, handleLogOut } = useGlobalContext();
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const handleDropdownToggle = () => {
@@ -16,7 +16,7 @@ const NavBar = () => {
     };
 
     const handleSignOutClick = () => {
-        setAccount(null);
+        handleLogOut();
         setDropdownOpen(false);
         navigate('/');
     };
@@ -84,18 +84,21 @@ const NavBar = () => {
 };
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
-    const { account } = useGlobalContext();
+    const { account, isLoading } = useGlobalContext();
     const navigate = useViewNavigate();
 
     useEffect(() => {
-        if (!account) {
-            navigate('/');
+        if (!isLoading) {
+            if (!account) {
+                navigate('/');
+            }
         }
-    }, [account, navigate]);
+    }, [account, navigate, isLoading]);
 
-    if (!account) {
+    if (isLoading) {
         return <LoadingScreen />;
     }
+
     return (
         <>
             <NavBar />

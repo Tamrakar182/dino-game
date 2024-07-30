@@ -12,15 +12,27 @@ interface Props {
         value: number;
     }[];
     character: string;
+    width?: number;
+    height?: number;
+    fontSize?: number;
 }
 
-const RadarChartComponent = ({ stats, character }: Props) => {
+const RadarChartComponent = ({ stats, character, width = 400, height = 300, fontSize = 12 }: Props) => {
     const memoised = useMemo(() => stats, [stats])
     return (
-        <RadarChart width={400} height={300} data={memoised} key={character}>
+        <RadarChart width={width} height={height} data={memoised} key={character}>
             <PolarGrid />
-            <PolarAngleAxis dataKey="name" />
-            <Radar name={character} dataKey="value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+            <PolarAngleAxis
+                dataKey="name"
+                fontSize={fontSize}
+            />
+            <Radar
+                name={character}
+                dataKey="value"
+                stroke="#8884d8"
+                fill="#8884d8"
+                fillOpacity={0.6}
+            />
         </RadarChart>
     );
 }
